@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://AdrianaCividini.github.io/cripto-app",
+  "homepage": "https://adrianacividini.github.io/criptoapp",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
