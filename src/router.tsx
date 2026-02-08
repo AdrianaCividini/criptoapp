@@ -5,28 +5,25 @@ import Detail from "./pages/detail";
 import NotFound from "./pages/notfound";
 import Layout from "./components/layout";
 
-const router = createBrowserRouter(
-  [
-    {
-      element: <Layout />,
+const router = createBrowserRouter([
+  {
+    element: <Layout />,
 
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/detail/:cripto",
-          element: <Detail />,
-        },
-        {
-          path: "*",
-          element: <NotFound />,
-        },
-      ],
-    },
-  ],
-  { basename: "/cripto-app" },
-);
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/detail/:cripto",
+        element: <Detail />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
+  },
+]);
 
 export default router;
