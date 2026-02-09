@@ -34,7 +34,8 @@ export default function Home() {
 
   useEffect(() => {
     async function getData() {
-      fetch(`https://rest.coincap.io/v3/assets?limit=10&offset=${offset}`)
+      fetch(`fetch("/.netlify/functions/coincap")
+`)
         .then((response) => response.json())
         .then((data: DataProps) => {
           const coinsData = data.data;
