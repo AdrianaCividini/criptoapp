@@ -1,25 +1,27 @@
-import fetch from "node-fetch";
+const axios = require("axios");
 
-export async function handler() {
+exports.handler = async function () {
   try {
-    const response = await fetch("https://api.coincap.io/v2/assets?limit=10");
-
-    const data = await response.json();
+    const response = await axios.get("https://api.coincap.io/v2/assets", {
+      params: {
+        limit: 10,
+      },
+    });
 
     return {
       statusCode: 200,
       headers: {
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(response.data),
     };
   } catch (error) {
     return {
       statusCode: 500,
       body: JSON.stringify({
         error: "Failed to fetch CoinCap API",
-        details: error.message,
+        message: error.message,
       }),
     };
   }
-}
+};
